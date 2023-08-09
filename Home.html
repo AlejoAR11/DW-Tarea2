@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Funciones y Flecha</title>
+</head>
+<body>
+    <h1>Funciones y Flecha</h1>
+    
+    <div id="output"></div>
+  
+    <script>
+      
+      const arregloFlecha = (arr, action) => {
+        if (action === 'pop') {
+          arr.pop();
+        } else if (action === 'push') {
+          arr.push(42); 
+        }
+      };
+  
+    
+      const noReturnFunction = (a, b) => {
+        const sum = a + b;
+        document.getElementById('output').innerHTML += `Suma: ${sum}<br>`;
+      };
+  
+    
+      const callbackFunction = (a, b, callback) => {
+        callback(a, b);
+      };
+  
+   
+      let myArray = [1, 2, 3, 4, 5];
+  
+ 
+      arregloFlecha(myArray, 'pop');
+      document.getElementById('output').innerHTML += `Arreglo después del pop: ${myArray}<br>`;
+  
+   
+      arregloFlecha(myArray, 'push');
+      document.getElementById('output').innerHTML += `Arreglo después del push: ${myArray}<br>`;
+  
+     
+      callbackFunction(10, 20, noReturnFunction);
+    </script>
+  </body>
+</html>
